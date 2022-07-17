@@ -1,4 +1,8 @@
 # Home Assistant Climate extension Custom Components
+
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/lee-jinhwan/ha-climate)
+![Version](https://img.shields.io/github/v/release/lee-jinhwan/ha-climate)
+
  Home Assistant core에서 Climate에 `AI 쾌적` 모드를 추가한 컴포넌트 입니다.
 
 ## 최소 지원 버전
