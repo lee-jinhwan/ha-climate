@@ -1,30 +1,138 @@
 {
-    "device_automation": {
-        "action_type": {
-            "set_hvac_mode": "{entity_name}\uc758 HVAC \ubaa8\ub4dc \ubcc0\uacbd\ud558\uae30",
-            "set_preset_mode": "{entity_name}\uc758 \ud504\ub9ac\uc14b \ubcc0\uacbd\ud558\uae30"
-        },
-        "condition_type": {
-            "is_hvac_mode": "{entity_name}\uc774(\uac00) \ud2b9\uc815 HVAC \ubaa8\ub4dc\ub85c \uc124\uc815\ub418\uc5b4\uc788\uc73c\uba74",
-            "is_preset_mode": "{entity_name}\uc774(\uac00) \ud2b9\uc815 \ud504\ub9ac\uc14b \ubaa8\ub4dc\ub85c \uc124\uc815\ub418\uc5b4\uc788\uc73c\uba74"
-        },
-        "trigger_type": {
-            "current_humidity_changed": "{entity_name}\uc774(\uac00) \uc2b5\ub3c4 \ubcc0\ud654\ub97c \uac10\uc9c0\ud588\uc744 \ub54c",
-            "current_temperature_changed": "{entity_name}\uc774(\uac00) \uc628\ub3c4 \ubcc0\ud654\ub97c \uac10\uc9c0\ud588\uc744 \ub54c",
-            "hvac_mode_changed": "{entity_name}\uc758 HVAC \ubaa8\ub4dc\uac00 \ubcc0\uacbd\ub418\uc5c8\uc744 \ub54c"
-        }
-    },
-    "state": {
-        "_": {
-            "auto": "\uc790\ub3d9",
-            "cool": "\ub0c9\ubc29",
-            "dry": "\uc81c\uc2b5",
-            "fan_only": "\uc1a1\ud48d",
-            "heat": "\ub09c\ubc29",
-            "heat_cool": "\ub0c9\ub09c\ubc29",
-            "ai_comfort": "AI \uCF8C\uC801",
-            "off": "\uaebc\uc9d0"
-        }
-    },
-    "title": "\uacf5\uc870\uae30\uae30"
+            "device_automation": {
+                "action_type": {
+                    "set_hvac_mode": "{entity_name}의 HVAC 모드 변경하기",
+                    "set_preset_mode": "{entity_name}의 프리셋 변경하기"
+                },
+                "condition_type": {
+                    "is_hvac_mode": "{entity_name}이(가) 특정 HVAC 모드로 설정되어있으면",
+                    "is_preset_mode": "{entity_name}이(가) 특정 프리셋 모드로 설정되어있으면"
+                },
+                "trigger_type": {
+                    "current_humidity_changed": "{entity_name}이(가) 습도 변화를 감지했을 때",
+                    "current_temperature_changed": "{entity_name}이(가) 온도 변화를 감지했을 때",
+                    "hvac_mode_changed": "{entity_name}의 HVAC 모드가 변경되었을 때"
+                }
+            },
+            "entity_component": {
+                "_": {
+                    "name": "온도 조절기",
+                    "state": {
+                        "auto": "자동",
+                        "cool": "냉방",
+                        "dry": "제습",
+                        "fan_only": "송풍",
+                        "heat": "난방",
+                        "heat_cool": "냉난방",
+                        "off": "꺼짐"
+                    },
+                    "state_attributes": {
+                        "aux_heat": {
+                            "name": "보조 열"
+                        },
+                        "current_humidity": {
+                            "name": "현재 습도"
+                        },
+                        "current_temperature": {
+                            "name": "현재 온도"
+                        },
+                        "fan_mode": {
+                            "name": "팬 모드",
+                            "state": {
+                                "auto": "자동",
+                                "diffuse": "발산",
+                                "focus": "집중",
+                                "high": "높음",
+                                "low": "낮음",
+                                "medium": "보통",
+                                "middle": "중간",
+                                "off": "꺼짐",
+                                "on": "켜짐",
+                                "top": "위"
+                            }
+                        },
+                        "fan_modes": {
+                            "name": "송풍 모드"
+                        },
+                        "humidity": {
+                            "name": "희망 습도"
+                        },
+                        "hvac_action": {
+                            "name": "현재 동작",
+                            "state": {
+                                "cooling": "냉방 중",
+                                "drying": "제습 중",
+                                "fan": "송풍",
+                                "heating": "난방 중",
+                                "idle": "유휴 중",
+                                "off": "꺼짐",
+                                "preheating": "예열"
+                            }
+                        },
+                        "hvac_modes": {
+                            "name": "HVAC 모드"
+                        },
+                        "max_humidity": {
+                            "name": "상한 희망 습도"
+                        },
+                        "max_temp": {
+                            "name": "상한 희망 온도"
+                        },
+                        "min_humidity": {
+                            "name": "하한 희망 습도"
+                        },
+                        "min_temp": {
+                            "name": "하한 희망 온도"
+                        },
+                        "preset_mode": {
+                            "name": "프리셋",
+                            "state": {
+                                "activity": "활동",
+                                "away": "외출",
+                                "boost": "쾌속",
+                                "comfort": "쾌적",
+                                "eco": "절약",
+                                "home": "재실",
+                                "none": "없음",
+                                "sleep": "취침"
+                            }
+                        },
+                        "preset_modes": {
+                            "name": "프리셋"
+                        },
+                        "swing_mode": {
+                            "name": "회전 모드",
+                            "state": {
+                                "both": "둘 다",
+                                "horizontal": "수평",
+                                "off": "꺼짐",
+                                "on": "켜짐",
+                                "vertical": "수직"
+                            }
+                        },
+                        "swing_modes": {
+                            "name": "회전 모드"
+                        },
+                        "target_temp_high": {
+                            "name": "상한 희망 온도"
+                        },
+                        "target_temp_low": {
+                            "name": "하한 희망 온도"
+                        },
+                        "target_temp_step": {
+                            "name": "희망 온도 단계"
+                        },
+                        "temperature": {
+                            "name": "희망 온도"
+                        }
+                    }
+                }
+            },
+            "issues": {
+                "platform_integration_no_support": {
+                    "description": "{domain} 통합을 위한 {platform} 플랫폼은 플랫폼 설정을 지원하지 않습니다.\n\n이 문제를 해결하려면 구성에서 제거하고 Home Assistant를 다시 시작하십시오.",
+                    "title": "지원되지 않는 플랫폼 지원"
+                }
+            },
+            "title": "공조기기"
 }
